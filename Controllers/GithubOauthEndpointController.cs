@@ -39,7 +39,7 @@ namespace GithubOauthEndpoint.Controllers
                 .PostAsync("/login/oauth/access_token", JsonContent.Create(accessTokenRequestContent), cancellationToken)
                 .ConfigureAwait(false);
 
-            return Ok(result);
+            return Ok(await result.Content.ReadAsStringAsync(cancellationToken));
         }
     }
 }

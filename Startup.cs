@@ -35,7 +35,7 @@ namespace GithubOauthEndpoint
             services.AddHttpClient("GitHub", client =>
             {
                 client.BaseAddress = new Uri("https://github.com");
-                client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
                 client.DefaultRequestHeaders.Add("User-Agent", "HttpClientGithubFactory");
             });
         }
